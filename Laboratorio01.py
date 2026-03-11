@@ -1,14 +1,14 @@
 def calculadora(op, op1, op2):
     if not isinstance(op, int):
-        return "Error"
+        return "Error 1"
     elif not isinstance(op1, int):
-        return "Error"
+        return "Error 2 "
     elif not isinstance(op2, int):
-        return "Error"
+        return "Error 3"
     elif not (op > 0 and op < 5):
-        return "Error"
-    elif (op == 4 and op2 == 0):
-        return "Error"
+        return "Error 4"
+    elif  (op == 4 and op2 == 0):
+        return "Error 5"
     else:
         return calculadora_Aux(op, op1, op2)
 
@@ -47,17 +47,17 @@ def contadorDigitos_Aux(num, digito):
 
 def sumatoria_V2(inicio, fin, distancia, excepcion):
     if not isinstance(inicio, int):
-        return "Error"
+        return "Error 1"
     elif not isinstance(fin, int):
-        return "Error"
+        return "Error 2"
     elif not isinstance(distancia, int):
-        return "Error"
+        return "Error 3"
     elif not isinstance(excepcion, int):
-        return "Error"
-    elif not (distancia >= 0 and distancia < 10):
-        return "Error"
+        return "Error 4"
+    elif not (abs(distancia) >= 0 and abs(distancia) < 10):
+        return "Error 5"
     elif not (excepcion >= 0 and excepcion < 10):
-        return "Error"
+        return "Error 6"
     else:
         return sumatoria_V2_Aux(inicio, fin, distancia, excepcion)
 
@@ -65,13 +65,24 @@ def sumatoria_V2_Aux(inicio, fin, distancia, excepcion):
 
     resultado = 0
 
-    while inicio > fin:
-        if excepcion == 0:
-            resultado += inicio
-        else:
-            if ((inicio % excepcion) != 0):
+    if distancia > 0:
+        while inicio <= fin:
+            if excepcion == 0:
                 resultado += inicio
+            else:
+                if ((inicio % excepcion) != 0):
+                    resultado += inicio
 
-        inicio += distiancia
+            inicio += distancia
+    else:
+        while inicio >= fin:
+            if excepcion == 0:
+                resultado += inicio
+            else:
+                if ((inicio % excepcion) != 0):
+                    resultado += inicio
 
+            inicio += distancia
 
+        
+    return resultado
