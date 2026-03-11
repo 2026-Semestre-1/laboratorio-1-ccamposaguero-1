@@ -54,10 +54,14 @@ def sumatoria_V2(inicio, fin, distancia, excepcion):
         return "Error 3"
     elif not isinstance(excepcion, int):
         return "Error 4"
-    elif not (abs(distancia) >= 0 and abs(distancia) < 10):
+    elif (distancia > 0 and inicio >= fin):
         return "Error 5"
+    elif (distancia < 0 and inicio <= fin):
+        return "Error 6"    
+    elif not (abs(distancia) >= 0 and abs(distancia) < 10):
+        return "Error 7"
     elif not (excepcion >= 0 and excepcion < 10):
-        return "Error 6"
+        return "Error 8"
     else:
         return sumatoria_V2_Aux(inicio, fin, distancia, excepcion)
 
