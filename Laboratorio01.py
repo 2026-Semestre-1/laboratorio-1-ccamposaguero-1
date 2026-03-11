@@ -12,7 +12,7 @@ def calculadora(op, op1, op2):
     else:
         return calculadora_Aux(op, op1, op2)
 
-def calculadora(op, op1, op2):
+def calculadora_Aux(op, op1, op2):
     if op == 1:
         return op1 + op2
     elif op == 2:
@@ -73,3 +73,4 @@ def sumatoria_V2_Aux(inicio, fin, distancia, excepcion):
                 resultado += inicio
 
         inicio += distiancia
+
