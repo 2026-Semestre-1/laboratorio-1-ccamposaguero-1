@@ -7,7 +7,7 @@ def calculadora(op, op1, op2):
         return "Error"
     elif not (op > 0 and op < 5):
         return "Error"
-    elif not (op == 4 and op2 == 0):
+    elif (op == 4 and op2 == 0):
         return "Error"
     else:
         return calculadora_Aux(op, op1, op2)
@@ -73,4 +73,5 @@ def sumatoria_V2_Aux(inicio, fin, distancia, excepcion):
                 resultado += inicio
 
         inicio += distiancia
+
 
